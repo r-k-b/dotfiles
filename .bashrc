@@ -1,3 +1,5 @@
+echo "bashrc: starting..."
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -113,6 +115,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+echo "bashrc: loading nvm..."
+
 # export NVM_DIR="/home/rob/.nvm"
 export NVM_DIR="$HOME/.nvm"
 
@@ -123,6 +127,8 @@ alias vim=nvim
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+echo "bashrc: checking ssh agent..."
 
 # http://askubuntu.com/a/634573/340840
 # Set up ssh-agent
@@ -146,4 +152,6 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent
 fi
+
+echo "bashrc: done"
 
