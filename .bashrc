@@ -155,3 +155,5 @@ fi
 
 echo "bashrc: done"
 
+cd ~
+
