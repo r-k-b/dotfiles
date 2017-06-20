@@ -19,7 +19,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=2000
+histfilesiZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -157,6 +157,10 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent
 fi
+
+# https://gist.github.com/raine/f452cf1588bc7b78d04a
+alias bunyan-heroku="sed -u 's/.*app\[web\..*\]\: //' | bunyan" 
+
 
 echo "bashrc: done"
 
