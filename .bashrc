@@ -63,8 +63,11 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# shows run time of last command. must be the last command in `PROMPT_COMMAND`.
+. ~/dotfiles/runtimeshow.sh
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='[last: ${timer_show}s] ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
