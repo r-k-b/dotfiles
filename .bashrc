@@ -45,7 +45,7 @@ esac
 # https://github.com/magicmonty/bash-git-prompt
 GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_THEME=Evermeet
-source ~/.bash/bash-git-prompt/gitprompt.sh
+# source ~/.bash/bash-git-prompt/gitprompt.sh
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -125,7 +125,7 @@ echo "bashrc: loading nvm..."
 # export NVM_DIR="/home/rob/.nvm"
 export NVM_DIR="$HOME/.nvm"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && time \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
 alias vim=nvim
@@ -165,4 +165,9 @@ alias bunyan-heroku="sed -u 's/.*app\[web\..*\]\: //' | bunyan"
 echo "bashrc: done"
 
 cd ~
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias gs="git status"
+
 
