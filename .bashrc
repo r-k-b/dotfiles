@@ -63,6 +63,9 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# https://github.com/wting/autojump
+. /usr/share/autojump/autojump.sh || true
+
 # shows run time of last command. must be the last command in `PROMPT_COMMAND`.
 . ~/dotfiles/runtimeshow.sh
 
@@ -172,5 +175,4 @@ cd ~
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias gs="git status"
-
 
