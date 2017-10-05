@@ -64,7 +64,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # https://github.com/wting/autojump
-. /usr/share/autojump/autojump.sh || true
+. /usr/share/autojump/autodump.sh || echo "autojump not installed"
 
 # shows run time of last command. must be the last command in `PROMPT_COMMAND`.
 . ~/dotfiles/runtimeshow.sh
