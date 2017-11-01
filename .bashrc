@@ -45,7 +45,7 @@ esac
 # https://github.com/magicmonty/bash-git-prompt
 GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_THEME=Evermeet
-# source ~/.bash/bash-git-prompt/gitprompt.sh
+source ~/.bash/bash-git-prompt/gitprompt.sh
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -64,7 +64,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # https://github.com/wting/autojump
-. /usr/share/autojump/autodump.sh || echo "autojump not installed"
+. /usr/share/autojump/autojump.sh || echo "autojump not installed"
 
 # shows run time of last command. must be the last command in `PROMPT_COMMAND`.
 . ~/dotfiles/runtimeshow.sh
@@ -175,4 +175,6 @@ cd ~
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias gs="git status"
+
+export MANWIDTH=80
 
