@@ -1,2 +1,7 @@
 .config/nvim/.netrwhist
+.npmrc
+.config/configstore
+.config/exercism
+.config/heroku         
+.config/yarn
 

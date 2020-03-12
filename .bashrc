@@ -178,3 +178,5 @@ alias gs="git status"
 
 export MANWIDTH=80
 
+alias open='cmd.exe /c start ""'
+
