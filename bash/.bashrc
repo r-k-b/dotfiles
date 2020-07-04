@@ -43,9 +43,9 @@ case "$TERM" in
 esac
 
 # https://github.com/magicmonty/bash-git-prompt
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_THEME=Evermeet
-source ~/.bash/bash-git-prompt/gitprompt.sh
+#GIT_PROMPT_ONLY_IN_REPO=1
+#GIT_PROMPT_THEME=Evermeet
+#source ~/.bash/bash-git-prompt/gitprompt.sh
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -64,17 +64,17 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # https://github.com/wting/autojump
-. /usr/share/autojump/autojump.sh || echo "autojump not installed"
+#. /usr/share/autojump/autojump.sh || echo "autojump not installed"
 
 # shows run time of last command. must be the last command in `PROMPT_COMMAND`.
-. ~/dotfiles/runtimeshow.sh
+#. ~/dotfiles/runtimeshow.sh
 
-if [ "$color_prompt" = yes ]; then
-    PS1='[last: ${timer_show}s] ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
+# if [ "$color_prompt" = yes ]; then
+#     PS1='[last: ${timer_show}s] ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# else
+#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+# fi
+# unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -129,15 +129,15 @@ fi
 echo "bashrc: loading nvm..."
 
 # export NVM_DIR="/home/rob/.nvm"
-export NVM_DIR="$HOME/.nvm"
+#export NVM_DIR="$HOME/.nvm"
+#
+#[ -s "$NVM_DIR/nvm.sh" ] && time \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#
 
-[ -s "$NVM_DIR/nvm.sh" ] && time \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#alias vim=nvim
 
-
-alias vim=nvim
-
-export VISUAL=nvim
-export EDITOR="$VISUAL"
+#export VISUAL=nvim
+#export EDITOR="$VISUAL"
 
 echo "bashrc: checking ssh agent..."
 
@@ -149,9 +149,9 @@ function start_agent {
     echo "Initializing new SSH agent..."
     touch $SSH_ENV
     chmod 600 "${SSH_ENV}"
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' >> "${SSH_ENV}"
+    ssh-agent | sed 's/^echo/#echo/' >> "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add
+    ssh-add
 }
 
 # Source SSH settings, if applicable
@@ -170,9 +170,9 @@ alias bunyan-heroku="sed -u 's/.*app\[web\..*\]\: //' | bunyan"
 
 echo "bashrc: done"
 
-cd ~
+#cd ~
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias gs="git status"
 
