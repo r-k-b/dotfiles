@@ -1,6 +1,10 @@
-## referenced apps
+# setup
 
-* nvm
+`cd ~/dotfiles`
 
-* [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
+`stow bash`
+
+`stow git`
+
+...etc etc...
 
