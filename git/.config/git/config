@@ -3,6 +3,8 @@
 	name = Robert K. Bell
 [push]
 	default = simple
+[commit]
+	gpgsign = true
 [diff]
     tool = vimdiff
 [merge]
