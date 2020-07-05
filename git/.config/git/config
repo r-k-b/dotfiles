@@ -1,6 +1,7 @@
 [user]
 	email = robert.k.bell@gmail.com
 	name = Robert K. Bell
+	signingkey = D7D054B596254A6E5AA2A1508A68AF21E4E214E2
 [push]
 	default = simple
 [commit]
@@ -12,3 +13,5 @@
     conflictstyle = diff3
 [mergetool "vimdiff"]
     cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[pull]
+	ff = only
