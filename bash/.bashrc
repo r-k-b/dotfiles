@@ -198,3 +198,6 @@ bind "set menu-complete-display-prefix on"
 # export LOCALE_ARCHIVE="$(nix-env --installed --no-name --out-path --query glibc-locales)/lib/locale/locale-archive"
 export LANG=en_US.UTF-8
 
+# Hook up direnv, for automatic isolated dev environments
+eval "$(direnv hook bash)"
+
