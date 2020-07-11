@@ -18,4 +18,9 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "20.09";
+
+  home.packages = with pkgs; [
+    anki xsel
+    jetbrains.datagrip jetbrains.rider jetbrains.webstorm
+  ];
 }
