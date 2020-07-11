@@ -24,6 +24,7 @@
     jetbrains.datagrip
     jetbrains.rider
     jetbrains.webstorm
+    openconnect
     xsel
   ];
 }
