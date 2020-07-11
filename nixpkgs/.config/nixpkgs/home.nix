@@ -20,7 +20,10 @@
   home.stateVersion = "20.09";
 
   home.packages = with pkgs; [
-    anki xsel
-    jetbrains.datagrip jetbrains.rider jetbrains.webstorm
+    anki
+    jetbrains.datagrip
+    jetbrains.rider
+    jetbrains.webstorm
+    xsel
   ];
 }
