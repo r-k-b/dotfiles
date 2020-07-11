@@ -193,3 +193,8 @@ bind "set show-all-if-ambiguous on"
 # only start cycling full results on the second Tab press
 bind "set menu-complete-display-prefix on"
 
+# Workaround a locale bug in NixOS
+# https://unix.stackexchange.com/a/243189/89024
+# export LOCALE_ARCHIVE="$(nix-env --installed --no-name --out-path --query glibc-locales)/lib/locale/locale-archive"
+export LANG=en_US.UTF-8
+
