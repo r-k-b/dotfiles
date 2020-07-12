@@ -21,10 +21,15 @@
 
   home.packages = with pkgs; [
     anki
+    hexchat
     jetbrains.datagrip
     jetbrains.rider
     jetbrains.webstorm
+    jq
     openconnect
+    redshift
+    spotify
+    tldr
     xsel
   ];
 }
