@@ -22,12 +22,14 @@
   home.packages = with pkgs; [
     anki
     hexchat
+    gwenview
     jetbrains.datagrip
     jetbrains.rider
     jetbrains.webstorm
     jq
     openconnect
     redshift
+    remmina
     spotify
     tldr
     xsel
