@@ -22,16 +22,27 @@
   home.packages = with pkgs; [
     anki
     hexchat
+    flameshot
     gwenview
     jetbrains.datagrip
     jetbrains.rider
     jetbrains.webstorm
     jq
+    kdeApplications.okular
+    libreoffice
     openconnect
+    
+    # Can pavucontrol bring back the system sounds?
+    # https://www.reddit.com/r/kde/comments/6838fr/system_sounds_keep_breaking/
+    pavucontrol
+
     redshift
     remmina
+    simplescreenrecorder
     spotify
+    steam-run
     tldr
+    vlc
     xsel
   ];
 }
