@@ -1,0 +1,27 @@
+########50 characters############################
+Type(Scope): Subject
+# Use the present tense, phrased in a way that makes sense when read as "this commit will..."
+# e.g. this commit will... "feat: add hat wobble"
+# 
+# build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+# ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+# docs: Documentation only changes
+# feat: A new feature
+# fix: A bug fix
+# perf: A code change that improves performance
+# refactor: A code change that neither fixes a bug nor adds a feature
+# style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+# test: Adding missing tests or correcting existing tests
+
+########72 characters##################################################
+Problem:
+# Problem, Task, Reason for Commit
+
+Solution:
+# Solution or List of Changes
+
+Note:
+# Special instructions, testing steps, rake, etc
+
+# References:
+# https://www.conventionalcommits.org/

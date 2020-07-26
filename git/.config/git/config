@@ -6,6 +6,7 @@
 	default = simple
 [commit]
 	gpgsign = true
+	template = /home/rkb/.gitmessage
 [diff]
     tool = vimdiff
 [merge]
