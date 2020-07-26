@@ -22,6 +22,7 @@
   home.packages = with pkgs; [
     anki
     hexchat
+    filelight
     flameshot
     gwenview
     jetbrains.datagrip
