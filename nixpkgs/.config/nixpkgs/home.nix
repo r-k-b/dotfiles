@@ -48,7 +48,7 @@
 
   programs.vim = {
     enable = true;
-    plugins = [ pkgs.vimPlugins.vim-airline pkgs.vimPlugins.vim-nix ];
+    plugins = with pkgs.vimPlugins; [ vim-airline vim-nix ];
     settings = { };
     extraConfig = "\n";
   };
