@@ -48,7 +48,7 @@
 
   programs.vim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [ vim-airline vim-nix ];
+    plugins = with pkgs.vimPlugins; [ vim-airline vim-better-whitespace vim-nix ];
     settings = { };
     extraConfig = "\n";
   };
