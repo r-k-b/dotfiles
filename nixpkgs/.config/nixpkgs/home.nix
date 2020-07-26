@@ -23,9 +23,12 @@
     anki
     hexchat
     filelight
+    fira-code
     flameshot
     gwenview
+    iosevka
     jetbrains.datagrip
+    jetbrains-mono
     jetbrains.rider
     jetbrains.webstorm
     jq
