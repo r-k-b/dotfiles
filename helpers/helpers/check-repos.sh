@@ -12,6 +12,7 @@ check () {
 		printf '=%.0s' 1
 	done;
 	echo "$msg"
+	git -C "$1" fetch
 	git -C "$1" status
 }
 
