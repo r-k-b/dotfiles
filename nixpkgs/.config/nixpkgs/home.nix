@@ -31,7 +31,7 @@
     kdeApplications.okular
     libreoffice
     openconnect
-    
+
     # Can pavucontrol bring back the system sounds?
     # https://www.reddit.com/r/kde/comments/6838fr/system_sounds_keep_breaking/
     pavucontrol
@@ -45,4 +45,11 @@
     vlc
     xsel
   ];
+
+  programs.vim = {
+    enable = true;
+    plugins = [ pkgs.vimPlugins.vim-airline pkgs.vimPlugins.vim-nix ];
+    settings = { };
+    extraConfig = "\n";
+  };
 }
