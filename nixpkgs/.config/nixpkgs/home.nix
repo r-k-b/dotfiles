@@ -52,8 +52,17 @@
 
   programs.vim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [ vim-airline vim-better-whitespace vim-nix ];
+    plugins = with pkgs.vimPlugins; [
+      vim-airline
+      vim-better-whitespace
+      vim-nix
+      editorconfig-vim
+    ];
     settings = { };
-    extraConfig = "\n";
+    extraConfig = ''
+      set viminfo+=n~/.viminfo
+      set list
+      set listchars=tab:>-
+    '';
   };
 }
