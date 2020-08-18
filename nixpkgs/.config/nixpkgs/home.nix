@@ -28,6 +28,7 @@
     gwenview
     iosevka
     jetbrains.datagrip
+    jetbrains.idea-ultimate
     jetbrains-mono
     jetbrains.rider
     jetbrains.webstorm
@@ -63,6 +64,7 @@
       set viminfo+=n~/.viminfo
       set list
       set listchars=tab:>-
+      set relativenumber
     '';
   };
 }
