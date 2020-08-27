@@ -21,6 +21,7 @@
 
   home.packages = with pkgs; [
     anki
+    ark
     hexchat
     filelight
     fira-code
