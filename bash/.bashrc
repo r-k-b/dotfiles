@@ -139,11 +139,12 @@ echo "bashrc: loading nvm..."
 #export VISUAL=nvim
 #export EDITOR="$VISUAL"
 
-echo "bashrc: checking ssh agent..."
+#echo "bashrc: checking ssh agent..."
 
 # http://askubuntu.com/a/634573/340840
 # Set up ssh-agent
-SSH_ENV="$HOME/.ssh/environment"
+# TODO: find a way to not break NixOS, but still do the thing on Ubuntu
+#SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
     echo "Initializing new SSH agent..."
@@ -155,14 +156,14 @@ function start_agent {
 }
 
 # Source SSH settings, if applicable
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    kill -0 $SSH_AGENT_PID 2>/dev/null || {
-        start_agent
-    }
-else
-    start_agent
-fi
+#if [ -f "${SSH_ENV}" ]; then
+#    . "${SSH_ENV}" > /dev/null
+#    kill -0 $SSH_AGENT_PID 2>/dev/null || {
+#        start_agent
+#    }
+#else
+#    start_agent
+#fi
 
 # https://gist.github.com/raine/f452cf1588bc7b78d04a
 alias bunyan-heroku="sed -u 's/.*app\[web\..*\]\: //' | bunyan" 
