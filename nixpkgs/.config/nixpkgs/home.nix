@@ -31,6 +31,7 @@
     jetbrains.datagrip
     jetbrains.idea-ultimate
     jetbrains-mono
+    jetbrains.pycharm-professional
     jetbrains.rider
     jetbrains.webstorm
     jq
@@ -49,6 +50,7 @@
     steam-run
     tldr
     vlc
+    vscode
     xsel
   ];
 
