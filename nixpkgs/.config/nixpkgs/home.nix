@@ -22,6 +22,8 @@
   home.packages = with pkgs; [
     anki
     ark
+    autossh
+    evince
     hexchat
     filelight
     fira-code
