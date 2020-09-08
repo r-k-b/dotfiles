@@ -23,6 +23,7 @@
     anki
     ark
     autossh
+    entr
     evince
     hexchat
     filelight
