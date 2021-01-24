@@ -18,3 +18,9 @@
 	ff = only
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[fetch]
+	prune = true
+[core]
+	autocrlf = input
+[init]
+	defaultBranch = main
