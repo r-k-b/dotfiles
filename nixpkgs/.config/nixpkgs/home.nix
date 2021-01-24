@@ -21,6 +21,7 @@
 
   home.packages = with pkgs; [
     ag
+    akregator
     anki
     ark
     autossh
@@ -42,6 +43,7 @@
     jq
     kdeApplications.okular
     libreoffice
+    notepadqq
     openconnect
 
     # Can pavucontrol bring back the system sounds?
@@ -56,6 +58,7 @@
     tldr
     vlc
     vscode
+    workrave
     xsel
   ];
 
