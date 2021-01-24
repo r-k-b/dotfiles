@@ -203,3 +203,28 @@ bind "set menu-complete-display-prefix on"
 # Hook up direnv, for automatic isolated dev environments
 eval "$(direnv hook bash)"
 
+
+# quick way to see if the given local branch has already been merged (or
+# rebased) into the "main" branch
+#
+# Usage:
+#    isMerged branch-i-want-to-check
+#
+# Defaults to the current branch if none is specified.
+# Assumes the remote is named `origin`.
+function isMerged() {
+    echo "If a line starts with +, it's not in the main branch."
+    echo "If a line starts with =, it's already in the main branch."
+    checking=${1:-$(git symbolic-ref --short HEAD)}
+    main="$(git remote show origin | grep "HEAD branch" | sed 's/.*: //')"
+    cmd="git log --oneline --cherry origin/$main...$checking"
+    echo "$cmd" && $cmd
+}
+
+# allow fuzzy search in Ctrl+R history
+# https://nixos.wiki/wiki/Fzf
+if command -v fzf-share >/dev/null; then
+  source "$(fzf-share)/key-bindings.bash"
+  source "$(fzf-share)/completion.bash"
+fi
+

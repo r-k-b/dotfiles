@@ -30,6 +30,7 @@
     filelight
     fira-code
     flameshot
+    fzf
     gwenview
     iosevka
     jetbrains.datagrip
