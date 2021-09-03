@@ -25,6 +25,9 @@
     anki
     ark
     autossh
+    bat # for previews in fzf
+    calibre
+    dropbox
     entr
     evince
     hexchat
@@ -41,22 +44,29 @@
     jetbrains.rider
     jetbrains.webstorm
     jq
-    kdeApplications.okular
     libreoffice
+    msgviewer # for outlook .msg files
     notepadqq
+    okular
     openconnect
 
     # Can pavucontrol bring back the system sounds?
     # https://www.reddit.com/r/kde/comments/6838fr/system_sounds_keep_breaking/
     pavucontrol
 
+    postman
     redshift
     remmina
+    scc # for quick line counts by language
     simplescreenrecorder
+    slack
     spotify
     steam-run
+    teams # for PHD
     tldr
+    unclutter-xfixes
     vlc
+    zoom-us
     vscode
     workrave
     xsel

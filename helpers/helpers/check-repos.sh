@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # Have I forgotten to commit or push changes to the common repos?
+#
+# src: https://github.com/r-k-b/dotfiles/blob/master/helpers/helpers/check-repos.sh
 
 set -e
 
@@ -18,4 +20,5 @@ check () {
 
 check /etc/nixos
 check ~/dotfiles
+check ~/projects/phdreview
 

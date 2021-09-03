@@ -18,8 +18,13 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-histfilesiZE=2000
+HISTSIZE=5000
+HISTFILESIZE=20000
+
+# don't wait until the shell is closing to add to the history
+# (allows accessing history of open shells from other open shells)
+# http://mywiki.wooledge.org/BashFAQ/088
+PROMPT_COMMAND="history -a; history -r"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -226,5 +231,6 @@ function isMerged() {
 if command -v fzf-share >/dev/null; then
   source "$(fzf-share)/key-bindings.bash"
   source "$(fzf-share)/completion.bash"
+  alias fzff="fzf --preview 'bat --color=always {}'"
 fi
 
