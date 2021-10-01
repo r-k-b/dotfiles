@@ -86,6 +86,7 @@
       set list
       set listchars=tab:>-
       set relativenumber
+      set number
     '';
   };
 }
