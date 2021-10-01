@@ -27,6 +27,7 @@
     bat # for previews in fzf
     calibre
     dropbox
+    element-desktop # for Nix chat
     entr
     evince
     hexchat
