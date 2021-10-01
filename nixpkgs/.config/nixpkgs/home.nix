@@ -1,12 +1,5 @@
 { config, pkgs, ... }:
-let
-  idea_2021_1 = (import (builtins.fetchTarball {
-    name = "elm-plugin-downgrade";
-    url =
-      "https://github.com/NixOS/nixpkgs/archive/860b56be91fb874d48e23a950815969a7b832fbc.tar.gz";
-    sha256 = "07i03028w3iak0brdnkp79ci8vqqbrgr5p5i9sk87fhbg3656xhw";
-  }) { }).jetbrains.idea-ultimate;
-in {
+{
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -44,13 +37,7 @@ in {
     gwenview
     iosevka
     jetbrains.datagrip
-
-    # Elm plugin doesn't support 2021.2 yet
-    # https://github.com/klazuka/intellij-elm/issues/763
-    # https://github.com/klazuka/intellij-elm/pull/764
-    #jetbrains.idea-ultimate
-    idea_2021_1
-
+    jetbrains.idea-ultimate
     jetbrains-mono
     jetbrains.pycharm-professional
     jetbrains.rider
