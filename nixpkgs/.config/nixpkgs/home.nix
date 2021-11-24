@@ -62,7 +62,6 @@
     slack
     spotify
     steam-run
-    teams # for PHD
     tldr
     unclutter-xfixes
     vlc
