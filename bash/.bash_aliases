@@ -6,3 +6,7 @@ alias idea-hippo='nix-shell ~/projects/PHDSys-webapp/hippo/shell.nix --run "idea
 
 alias rider-phdnet='nix develop /home/rkb/projects/phdsys-net/ --command rider "" &> /dev/null &'
 
+# use like `vim $(bo)`
+# https://dystroy.org/broot/tricks/
+alias bo="br --conf ~/.config/broot/select.toml"
+
