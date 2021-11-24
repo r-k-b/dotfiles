@@ -234,3 +234,5 @@ if command -v fzf-share >/dev/null; then
   alias fzff="fzf --preview 'bat --color=always {}'"
 fi
 
+
+source /home/rkb/.config/broot/launcher/bash/br
