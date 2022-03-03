@@ -20,5 +20,4 @@ check () {
 
 check /etc/nixos
 check ~/dotfiles
-check ~/projects/phdreview
 
