@@ -19,7 +19,6 @@
   home.stateVersion = "20.09";
 
   home.packages = with pkgs; [
-    ag
     akregator
     anki
     ark
@@ -58,6 +57,7 @@
     redshift
     remmina
     scc # for quick line counts by language
+    silver-searcher
     simplescreenrecorder
     slack
     spotify
