@@ -59,8 +59,6 @@
     scc # for quick line counts by language
     silver-searcher
     simplescreenrecorder
-    slack
-    spotify
     steam-run
     tldr
     unclutter-xfixes
