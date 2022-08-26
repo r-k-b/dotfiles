@@ -134,7 +134,11 @@ ForegroundVisited=155,89,182
 ColorScheme=BreezeDark
 Name[en_GB]=Breeze Dark
 Name=Breeze Dark
+font=Noto Sans,12,-1,5,50,0,0,0,0,0
+menuFont=Noto Sans,12,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
+smallestReadableFont=Noto Sans,10,-1,5,50,0,0,0,0,0
+toolBarFont=Noto Sans,12,-1,5,50,0,0,0,0,0
 widgetStyle=Breeze
 
 [Icons]
