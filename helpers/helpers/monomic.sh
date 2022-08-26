@@ -18,6 +18,8 @@ if pacmd list-sources | grep -q "name: <$BASE_NAME>"; then
 
 	pacmd set-default-source cru1_mono
 
+	pacmd set-source-volume cru1_mono 65536 # 100%, in case Zoom turned down the volume
+
 	echo "Remapped microphone created."
 	exit 0;
 else
