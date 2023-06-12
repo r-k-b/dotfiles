@@ -4,6 +4,13 @@
 
 set -eou pipefail
 
+if [ $# -eq 0 ]
+then
+	# no arguments provided
+	echo "use like: ./promote.sh 2023W06 78d6d395aa3d773cca5a2641e5eb8b18160bca75"
+	exit 0
+fi
+
 workDir=$(realpath ~/Downloads/azclistuff)
 echo "Working in $workDir"
 cd "$workDir"
