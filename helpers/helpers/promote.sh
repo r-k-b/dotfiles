@@ -32,7 +32,7 @@ az artifacts universal download \
 	--feed "phd-frontend" \
 	--name "hippoui-main" \
 	--version "0.0.0-commit-$commitHash"\
-	--path /Downloads/
+	--path /tmp/
 
 
 sanitizedReleaseVersion=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')
@@ -52,6 +52,6 @@ az artifacts universal publish \
 	--name "hippoui-release" \
 	--version "0.0.0-release-$sanitizedReleaseVersion" \
 	--description "HIPPO frontend for release $releaseVersion" \
-	--path "/Downloads/HippoUI.0.0.0-release-$sanitizedReleaseVersion.zip"
+	--path "/tmp/HippoUI.0.0.0-release-$sanitizedReleaseVersion.zip"
 
 echo done.
