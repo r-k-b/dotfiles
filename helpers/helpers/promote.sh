@@ -4,6 +4,11 @@
 
 set -eou pipefail
 
+hash az 2>/dev/null || {
+  echo >&2 "I didn't find the 'az' command.  Do you have the azure-cli set up?";
+  exit 1;
+}
+
 if [ $# -eq 0 ]
 then
 	# no arguments provided
@@ -20,7 +25,7 @@ releaseVersion="$1"
 
 echo downloading commit hash: "$commitHash"
 
-~/helpers/az-cli-docker-alias.sh artifacts universal download \
+az artifacts universal download \
 	--organization "https://pacifichealthdynamics.visualstudio.com/" \
 	--project "e216e3e9-03bd-4591-b373-c229ed35d45d" \
 	--scope project \
@@ -39,7 +44,7 @@ mv "HippoUI.0.0.0-commit-$commitHash.zip" \
 
 echo uploading as version: "$sanitizedReleaseVersion ($releaseVersion)"
 
-~/helpers/az-cli-docker-alias.sh artifacts universal publish \
+az artifacts universal publish \
 	--organization https://pacifichealthdynamics.visualstudio.com/ \
 	--project 'PHDSys' \
 	--scope 'project' \
