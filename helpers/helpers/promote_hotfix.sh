@@ -2,6 +2,11 @@
 
 set -eou pipefail
 
+az() {
+  echo "calling az with: " "$@"
+  ~/helpers/az-cli-docker-alias.sh "$@"
+}
+
 hash az 2>/dev/null || {
   echo >&2 "I didn't find the 'az' command.  Do you have the azure-cli set up?";
   exit 1;
