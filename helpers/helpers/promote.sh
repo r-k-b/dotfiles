@@ -17,7 +17,8 @@ then
 fi
 
 workDir=$(realpath ~/Downloads/azclistuff)
-echo "Working in $workDir"
+containerWorkDir="/Downloads"
+echo "Working in $workDir, visible from the az-cli container as $containerWorkDir"
 cd "$workDir"
 
 commitHash="$2"
@@ -31,9 +32,8 @@ az artifacts universal download \
 	--scope project \
 	--feed "phd-frontend" \
 	--name "hippoui-main" \
-	--version "0.0.0-commit-$commitHash"\
-	--path /tmp/
-
+	--version "0.0.0-commit-$commitHash" \
+	--path "$containerWorkDir"
 
 sanitizedReleaseVersion=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')
 
@@ -52,6 +52,6 @@ az artifacts universal publish \
 	--name "hippoui-release" \
 	--version "0.0.0-release-$sanitizedReleaseVersion" \
 	--description "HIPPO frontend for release $releaseVersion" \
-	--path "/tmp/HippoUI.0.0.0-release-$sanitizedReleaseVersion.zip"
+	--path "$containerWorkDir"
 
 echo done.
