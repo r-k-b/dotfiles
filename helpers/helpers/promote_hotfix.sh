@@ -15,7 +15,7 @@ hash az 2>/dev/null || {
 if [ $# -eq 0 ]
 then
 	# no arguments provided
-	echo 'use like: ./promote.sh "hippoui-release.hippo.2023w12.1" "2023W12.1" e7750d6e065dcd8ab314846a0530556bdf423dd3'
+	echo 'use like: ./promote_hotfix.sh "hippoui-release.hippo.2023w12.1" "2023W12.1" e7750d6e065dcd8ab314846a0530556bdf423dd3'
 	echo ''
 	echo 'Note: the first arg exactly matches the "name" property of the feed in Azure Artifacts.'
   echo "It's derived from the name of the hotfix branch."
