@@ -768,3 +768,6 @@ $env.config = {
 }
 
 source /home/rkb/.config/broot/launcher/nushell/br
+
+source ~/.zoxide.nu
+
