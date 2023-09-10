@@ -5,3 +5,6 @@
 .config/heroku         
 .config/yarn
 
+# editor noise
+**/.idea
+
