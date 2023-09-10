@@ -771,3 +771,14 @@ source /home/rkb/.config/broot/launcher/nushell/br
 
 source ~/.zoxide.nu
 
+# from https://www.nushell.sh/cookbook/direnv.html
+$env.config = {
+  hooks: {
+    pre_prompt: [{ ||
+      let direnv = (direnv export json | from json)
+      let direnv = if ($direnv | length) == 1 { $direnv } else { {} }
+      $direnv | load-env
+    }]
+  }
+}
+
