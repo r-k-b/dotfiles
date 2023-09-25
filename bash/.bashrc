@@ -236,3 +236,6 @@ fi
 
 
 source /home/rkb/.config/broot/launcher/bash/br
+
+eval "$(zoxide init bash)"
+
