@@ -8,7 +8,16 @@
 	gpgsign = true
 	template = /home/rkb/.gitmessage
 [diff]
-    tool = vimdiff
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
+# `git difft` is less to type than `git difftool`.
+[alias]
+	difft = difftool
 [merge]
     tool = vimdiff
     conflictstyle = diff3
