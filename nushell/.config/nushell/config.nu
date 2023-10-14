@@ -804,3 +804,20 @@ source /home/rkb/.config/broot/launcher/nushell/br
 
 source ~/.zoxide.nu
 
+module rerun {
+    # Watch the output of a command. Similar to watch(1) but with a closure.
+    # based on https://github.com/emk/nushell-commands/blob/main/rerun.nu
+    export def main [
+        closure: closure                  # The closure run on each iteration.
+        --interval (-n): duration = 2sec  # The interval between iterations.
+    ] {
+        loop {
+            clear
+            do $closure
+            sleep $interval
+        }
+    }
+}
+
+use rerun *
+
