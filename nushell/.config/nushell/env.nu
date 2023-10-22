@@ -29,7 +29,9 @@ def create_right_prompt [] {
     let time_segment = ([
         (ansi reset)
         (ansi magenta)
-        (date now | format date '%s %+')
+        (printf "%'d" (date now | format date '%s'))
+        " "
+        (date now | format date '%+')
     ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
         str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
 
