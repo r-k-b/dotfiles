@@ -1,0 +1,151 @@
+[
+    {
+        "title": "elm-review",
+        "command": [
+            "elm-review",
+            "--watch"
+        ],
+        "defaultStatus": [
+            "⏳",
+            "S"
+        ],
+        "status": {
+            "Running": [
+                "⏳",
+                "S"
+            ],
+            "ERROR": [
+                "🚨",
+                "E"
+            ],
+            "I found no(?: more)? errors!": [
+                "️✅",
+                "0"
+            ],
+            "apply this fix": [
+                "🧰️",
+                "F"
+            ]
+        }
+    },
+    {
+        "title": "elm-test",
+        "command": [
+            "elm-test",
+            "--watch"
+        ],
+        "defaultStatus": [
+            "⏳",
+            "S"
+        ],
+        "status": {
+            "Compiling": [
+                "\uD83D\uDEE0\uFE0F",
+                "."
+            ],
+            "Starting tests": [
+                "\uD83E\uDD14",
+                "."
+            ],
+            "TEST RUN PASSED": [
+                "️✅",
+                "0"
+            ],
+            "TEST RUN INCOMPLETE": [
+                "️\uD83D\uDEA7",
+                "0"
+            ],
+            "TEST RUN FAILED": [
+                "❌",
+                "F"
+            ],
+            "ERROR": [
+                "🚨",
+                "E"
+            ],
+            "failed with exit code": [
+                "🚨",
+                "E"
+            ]
+        }
+    },
+    {
+        "title": "entr make tcm",
+        "command": [
+            "/home/rkb/helpers/tcm_entr.sh"
+        ],
+        "defaultStatus": [
+            "⏳",
+            "S"
+        ],
+        "status": {
+            "Watching \"": [
+                "️✅",
+                "0"
+            ],
+            "Compiling": [
+                "⏳",
+                "S"
+            ],
+            "Success!": [
+                "️✅",
+                "0"
+            ],
+            "Detected problems": [
+                "🚨",
+                "E"
+            ]
+        }
+    },
+    {
+        "title": "watch:style",
+        "command": [
+            "npm",
+            "run",
+            "watch:style"
+        ],
+        "defaultStatus": [
+            "⏳",
+            "S"
+        ],
+        "status": {
+            "Watching \"": [
+                "️✅",
+                "0"
+            ],
+            "Finished 'compileCss'": [
+                "️✅",
+                "0"
+            ],
+            "Starting 'compileCss'": [
+                "⏳",
+                "S"
+            ]
+        }
+    },
+    {
+        "title": "multilive",
+        "command": [
+            "multilive.sh"
+        ],
+        "defaultStatus": [
+            "⏳",
+            "S"
+        ],
+        "status": {
+            "The build has succeeded": [
+                "️✅",
+                "0"
+            ],
+            "Rebuilding": [
+                "⏳",
+                "S"
+            ],
+            "exited with code": [
+                "🚨",
+                "E"
+            ]
+        }
+    }
+]
+
