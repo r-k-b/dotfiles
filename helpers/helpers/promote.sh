@@ -57,6 +57,6 @@ az artifacts universal publish \
 	--name "hippoui-release" \
 	--version "0.0.0-release-$sanitizedReleaseVersion" \
 	--description "HIPPO frontend for release $releaseVersion" \
-	--path "$containerWorkDir"
+	--path "$containerWorkDir/HippoUI.0.0.0-release-$sanitizedReleaseVersion.zip"
 
 echo done.
