@@ -11,7 +11,9 @@ set -e
 cd ~/projects/bump
 git fetch
 git checkout bump_hippo_version
-git commit --amend
+cat << EOF | git commit --amend --file=-
+chore: bump hippo version
+EOF
 git push --force
 git checkout main
 git branch -d bump_hippo_version
