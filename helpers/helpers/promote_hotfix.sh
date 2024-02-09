@@ -34,10 +34,10 @@ hotfixFeed="$1"
 echo downloading commit hash: "$commitHash"
 
 az artifacts universal download \
-	--organization "https://pacifichealthdynamics.visualstudio.com/" \
-	--project "e216e3e9-03bd-4591-b373-c229ed35d45d" \
-	--scope project \
-	--feed "phd-frontend" \
+	--organization "https://dev.azure.com/HAMBS-AU/" \
+	--project "d2756ded-f26d-4358-8551-02a4c0f37d19" \
+	--scope "project" \
+	--feed "hippo-frontend" \
 	--name "$hotfixFeed" \
 	--version "0.0.0-commit-$commitHash" \
 	--path "$containerWorkDir"
@@ -48,10 +48,10 @@ sanitizedReleaseVersion=$(printf '%s' "$releaseVersion" | tr '[:upper:]' '[:lowe
 echo uploading to the main feed for WF Octo, as version: "$sanitizedReleaseVersion ($releaseVersion)"
 
 az artifacts universal publish \
-	--organization https://pacifichealthdynamics.visualstudio.com/ \
-	--project 'PHDSys' \
-	--scope 'project' \
-	--feed 'phd-frontend' \
+	--organization "https://dev.azure.com/HAMBS-AU/" \
+	--project "d2756ded-f26d-4358-8551-02a4c0f37d19" \
+	--scope "project" \
+	--feed "hippo-frontend" \
 	--name "hippoui-main" \
 	--version "0.0.0-commit-$commitHash" \
 	--description "HIPPO frontend for release $releaseVersion, commit $commitHash" \
@@ -65,10 +65,10 @@ mv "HippoUI.0.0.0-commit-$commitHash.zip" \
 echo uploading as version: "$sanitizedReleaseVersion ($releaseVersion)"
 
 az artifacts universal publish \
-	--organization https://pacifichealthdynamics.visualstudio.com/ \
-	--project 'PHDSys' \
-	--scope 'project' \
-	--feed 'phd-frontend' \
+	--organization "https://dev.azure.com/HAMBS-AU/" \
+	--project "d2756ded-f26d-4358-8551-02a4c0f37d19" \
+	--scope "project" \
+	--feed "hippo-frontend" \
 	--name "hippoui-release" \
 	--version "0.0.0-release-$sanitizedReleaseVersion" \
 	--description "HIPPO frontend for release $releaseVersion, commit $commitHash" \
