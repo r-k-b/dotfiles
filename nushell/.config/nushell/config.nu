@@ -348,7 +348,7 @@ $env.config = {
             mode: [emacs, vi_normal, vi_insert]
             event: {
                 send: executehostcommand
-                cmd: "commandline (
+                cmd: "commandline edit --replace (
                     history
                        | each { |it| $it.command }
                        | uniq
