@@ -821,3 +821,5 @@ module rerun {
 
 use rerun *
 
+
+use '/home/rkb/.config/broot/launcher/nushell/br' *
