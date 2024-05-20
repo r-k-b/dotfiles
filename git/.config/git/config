@@ -34,3 +34,5 @@
 	editor = vim
 [init]
 	defaultBranch = main
+[remote "origin"]
+	tagopt = --tags
