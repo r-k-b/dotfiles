@@ -1,0 +1,18 @@
+#!/usr/bin/env nix-shell
+#!nix-shell -i nu -p gh deno
+
+print "Show me PHD GitHub PRs that have had commits added since my last review."
+
+def getHelperPath [] {
+   $env.FILE_PWD | path join 'check-for-stale-reviews.ts'
+}
+
+let helper = (getHelperPath)
+
+cd ~/projects/PHDSys-webapp
+
+print $"working in ($env.pwd)"
+
+(gh pr list --json 'commits,latestReviews,number' --limit 40
+  --search 'is:pr is:open reviewed-by:@me review:approved sort:updated-desc -author:r-k-b'
+) | deno run $helper | from json
