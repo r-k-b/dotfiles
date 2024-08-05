@@ -378,8 +378,8 @@ $env.config = {
                 cmd: "commandline edit --replace (
                     history
                        | each { |it| $it.command }
-                       | uniq
                        | reverse
+                       | uniq
                        | str join (char -i 0)
                        | fzf --scheme=history --read0 --layout=reverse --height=40% -q (commandline)
                        | decode utf-8
