@@ -8,6 +8,6 @@ podman run -it \
     -v "${HOME}"/.azure-devops:/root/.azure-devops \
     -v "${HOME}"/Downloads/azclistuff:/Downloads \
     -v ~/projects/PHDSys-webapp/hippo:/hippo \
-    mcr.microsoft.com/azure-cli:2.56.0 \
+    mcr.microsoft.com/azure-cli:2.63.0 \
     az "$@"
 
