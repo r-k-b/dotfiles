@@ -2,8 +2,9 @@
 
 def main [ url: string, interval: duration = 4sec, lines: int = 30 ] {
   loop {
+     let result = curl $url | lines | last $lines
      clear
-     curl $url | lines | last $lines | print
+     print $result
      sleep $interval
   }
 }
