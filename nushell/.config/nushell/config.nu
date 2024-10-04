@@ -853,3 +853,5 @@ use rerun *
 
 
 use '/home/rkb/.config/broot/launcher/nushell/br' *
+
+$env.PATH = ($env.PATH | append "~/helpers/")
