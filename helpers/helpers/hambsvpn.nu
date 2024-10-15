@@ -12,7 +12,7 @@
                 --authgroup="PHD-Gateway"
                 --servercert pin-sha256:YEJA+GVUxvFwbq3IFcgvXraEs/LRNsfccLDS/mdHIUQ=
                 --dump-http-traffic vpnportal.hambs.com.au
-                -s 'vpn-slice --verbose --dump --banner --no-ns-hosts --no-host-names 10.0.0.0/8 172.0.0.0/8 192.168.0.0/16'
+                -s 'vpn-slice --verbose --dump --banner --no-ns-hosts --no-host-names 10.0.0.0/8 172.0.0.0/8 192.168.0.0/16 203.22.229.119/32'
             )
         }
     } catch {
