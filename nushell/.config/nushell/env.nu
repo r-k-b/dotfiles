@@ -13,6 +13,12 @@ def create_left_prompt [] {
     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
     let path_segment = $"($path_color)($dir)(ansi reset)"
 
+    # remind me when a long-running command finishes
+    # (I probably switched away to look at something else)
+    if (($env.CMD_DURATION_MS | into int) > 5_000) {
+        espeak $"that took ($env.CMD_DURATION_MS | into int | into duration --unit ms)"
+    }
+
     $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
 }
 
