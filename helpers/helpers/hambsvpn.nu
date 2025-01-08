@@ -10,7 +10,7 @@
                 --user=hslrbe
                 --os=win -v
                 --authgroup="PHD-Gateway"
-                --servercert pin-sha256:YEJA+GVUxvFwbq3IFcgvXraEs/LRNsfccLDS/mdHIUQ=
+                --servercert pin-sha256:b/doM2k5TZrX//Gi5fBiKKL2c9Toh5YsT3ZR85KWzuM=
                 --dump-http-traffic vpnportal.hambs.com.au
                 -s 'vpn-slice --verbose --dump --banner --no-ns-hosts --no-host-names 10.0.0.0/8 172.0.0.0/8 192.168.0.0/16 203.22.229.119/32'
             )
