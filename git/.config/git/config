@@ -36,3 +36,5 @@
 	defaultBranch = main
 [remote "origin"]
 	tagopt = --tags
+[log]
+	date = iso-strict
