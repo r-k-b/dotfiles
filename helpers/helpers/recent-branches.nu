@@ -3,7 +3,7 @@
 def main [
   --checkFlakes # run `nix flake check` on the branches
   --last: int = 3
-  --fetch = false
+  --fetch # pull the latest data from the remote BE repo.
 ] {
   cd ~/projects/phdsys-net
 
