@@ -13,15 +13,19 @@ def main [
 
   let plain = git for-each-ref --sort=committerdate refs/remotes/ --format '%(objectname)፨%(refname:lstrip=3)፨%(objecttype)፨%(committerdate:iso-strict)'
 
-  let parsed = $plain | lines | split column '፨' | rename hash ref type committerdate | update committerdate {|row| $row.committerdate | into datetime} | last $last
+  let parsed = $plain | lines | split column '፨' | rename hash ref type committerdate | update committerdate {|row| $row.committerdate | into datetime}
+
+  let refined = $parsed | filter {|row|
+    $row.ref != "integration"
+  } | last $last
 
   if (not $checkFlakes) {
-    return $parsed
+    return $refined
   } else {
-    $parsed | print
+    $refined | print
   }
 
-  $parsed | each {|row| doCheck $row}
+  $refined | each {|row| doCheck $row}
 
   print "finished."
 }
