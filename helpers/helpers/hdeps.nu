@@ -9,6 +9,8 @@ def main [
 ] {
     cd ~/projects/hdeps-fe
     git fetch
+    git checkout main
+    try { git branch -D $targetBranch }
     git checkout $targetBranch
     ./hippo/bin/update-npmDepsHashes
     git commit -a -m "chore: bump npmDepsHashes"
