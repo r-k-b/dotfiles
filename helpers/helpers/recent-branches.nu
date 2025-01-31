@@ -36,6 +36,7 @@ def doCheck [row] {
 
   try {
     NIXPKGS_ALLOW_INSECURE=1 nix flake check $flake --impure
+    print $"✅ branch ($row.ref) passed the checks."
   } catch {
     print $"❌ branch ($row.ref) did not pass the flake checks \(commit ($row.hash)\)"
   }
