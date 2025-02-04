@@ -1,0 +1,4 @@
+#!/usr/bin/env nu
+
+tmux new -s "BE_jbrider" nu -e 'nix develop git+ssh://git@ssh.dev.azure.com/v3/HAMBS-AU/Sydney/PHDSys-net?ref=main --command rider'
+
