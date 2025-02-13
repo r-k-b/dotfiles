@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Helps to show a clean, readable git diff for massive 1-line unformatted json files.
+#
+# Register this script in your git config like:
+#
+#     git config diff.nastyjson.textconv formatjson
+#
+# then put something like this in a `.gitattributes` file in the repo containing the nasty json files:
+#
+#     big-n-nasty.json diff=nastyjson
+
+jq . "$1"
+
