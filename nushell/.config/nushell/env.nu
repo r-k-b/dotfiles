@@ -109,4 +109,6 @@ $env.NU_PLUGIN_DIRS = [
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 
+$env.EDITOR = "vim"
+
 zoxide init nushell --cmd=j | save -f ~/.zoxide.nu
