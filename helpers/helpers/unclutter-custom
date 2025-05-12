@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+unclutter --timeout 1
+
