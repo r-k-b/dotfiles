@@ -1,4 +1,5 @@
-#!/usr/bin/env nu
+#!/usr/bin/env nix
+#!nix shell nixpkgs#v4l-utils --command nu
 
 print "Settings before:"
 v4l2-ctl -d /dev/video3 --list-ctrls
