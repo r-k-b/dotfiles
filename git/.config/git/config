@@ -38,3 +38,5 @@
 	tagopt = --tags
 [log]
 	date = iso-strict
+[safe]
+	directory = /etc/nixos
