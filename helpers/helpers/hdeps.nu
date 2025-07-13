@@ -12,6 +12,7 @@ def main [
     git checkout main
     try { git branch -D $targetBranch }
     git checkout $targetBranch
+    git merge origin/main --no-edit
     ./hippo/bin/update-npmDepsHashes
     git commit -a -m "chore: bump npmDepsHashes"
     git push
