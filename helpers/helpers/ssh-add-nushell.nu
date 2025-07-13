@@ -1,5 +1,6 @@
 #!/usr/bin/env nu
 # from https://www.nushell.sh/cookbook/ssh_agent.html
+# use like `source ssh-add-nushell.nu`
 do --env {
     let ssh_agent_file = (
         $nu.temp-path | path join $"ssh-agent-($env.USER? | default whoami).nuon"
