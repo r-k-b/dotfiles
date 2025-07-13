@@ -23,6 +23,8 @@
     conflictstyle = diff3
 [mergetool "vimdiff"]
     cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[push]
+	autoSetupRemote = true
 [pull]
 	ff = only
 [url "git@github.com:"]
