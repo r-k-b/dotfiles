@@ -1,4 +1,4 @@
 #!/usr/bin/env nu
 
-tmux new -s "FE_jbidea" nu -e 'nix develop git+ssh://git@github.com/Pacific-Health-Dynamics/PHDSys-webapp.git?ref=main --command idea-ultimate'
+tmux new -d -s "FE_jbidea" nu -e 'nix develop git+ssh://git@github.com/Pacific-Health-Dynamics/PHDSys-webapp.git?ref=main --command idea-ultimate'
 
