@@ -317,7 +317,8 @@ $env.config = {
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
         command_not_found: {
             |command_name| (
-                command-not-found $command_name
+                print "Command not found... nix-locate offers:\n"
+                (nix-locate $"bin/($command_name)" | str trim)
             )
         } # return an error message when a command is not found
     }
