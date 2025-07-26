@@ -952,8 +952,18 @@ module rerun {
         }
     }
 }
-
 use rerun *
+
+module ssht {
+    # SSH straight into the tmux session.
+    export def main [hostname: string] {
+        if ($hostname | is-empty) {
+            error make {msg: $"usage: ssht <hostname>"}
+        }
+    ssh $hostname -t sh -c "'tmux a || tmux'"
+    }
+}
+use ssht *
 
 
 use '/home/rkb/.config/broot/launcher/nushell/br' *
