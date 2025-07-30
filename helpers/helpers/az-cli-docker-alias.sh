@@ -7,7 +7,7 @@ podman run -it \
     -v "${HOME}"/.azure:/root/.azure \
     -v "${HOME}"/.azure-devops:/root/.azure-devops \
     -v "${HOME}"/Downloads/azclistuff:/Downloads \
-    -v ~/projects/PHDSys-webapp/hippo:/hippo \
+    -v ~/projects/pweb/hippo:/hippo \
     mcr.microsoft.com/azure-cli:2.63.0 \
     az "$@"
 

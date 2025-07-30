@@ -9,7 +9,7 @@ def getHelperPath [] {
 
 let helper = (getHelperPath)
 
-cd ~/projects/PHDSys-webapp
+cd ~/projects/pweb
 
 print $"working in ($env.pwd)"
 
