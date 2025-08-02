@@ -113,4 +113,6 @@ path add ~/helpers
 
 $env.EDITOR = "vim"
 
+$env.MANWIDTH = "100"
+
 zoxide init nushell --cmd=j | save -f ~/.zoxide.nu
