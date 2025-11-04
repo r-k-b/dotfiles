@@ -938,6 +938,10 @@ source /home/rkb/.config/broot/launcher/nushell/br
 
 source ~/.zoxide.nu
 
+# adds the ssh-agent socket env var to every shell.
+# don't forget to add `AddKeysToAgent yes` to your `~/.ssh/config`.
+source ~/helpers/ssh-add-nushell.nu
+
 module rerun {
     # Watch the output of a command. Similar to watch(1) but with a closure.
     # based on https://github.com/emk/nushell-commands/blob/main/rerun.nu
