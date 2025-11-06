@@ -8,6 +8,9 @@ def main [
     targetBranch: string # the branch to commit to
 ] {
     cd ~/projects/hdeps-fe
+    git clean -xf .
+    git checkout .
+    git reset --hard HEAD
     git fetch
     git checkout main
     try { git branch -D $targetBranch }
