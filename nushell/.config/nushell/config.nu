@@ -972,3 +972,26 @@ use ssht *
 
 use '/home/rkb/.config/broot/launcher/nushell/br' *
 
+
+def gpr_pweb [
+  branchToReview: string
+  reviewNumber?: int
+] {
+  if ((not ("INSIDE_HIPPO_DEV_ENV" in $env)) or ($env.INSIDE_HIPPO_DEV_ENV != "1")) {
+    cd ~/projects/pweb
+    print "npm is needed!"
+    return 1
+  }
+  let wtFolder = "/home/rkb/projects/pweb_worktrees"
+  let reviewBranch = match $reviewNumber {
+    null => $branchToReview
+    _ => $"rkb/review/($branchToReview)/($reviewNumber)"
+  }
+  git branch $reviewBranch $"origin/($branchToReview)"
+  git branch --unset-upstream $reviewBranch
+  git worktree add $"($wtFolder)/($reviewBranch)" $reviewBranch
+  cp -r "/home/rkb/projects/pweb/.idea" $"($wtFolder)/($reviewBranch)/"
+  npm --prefix $"($wtFolder)/($reviewBranch)/admin" install
+  cd $"($wtFolder)/($reviewBranch)"
+  idea-ultimate $"($wtFolder)/($reviewBranch)"
+}
