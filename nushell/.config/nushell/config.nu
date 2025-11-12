@@ -973,7 +973,7 @@ use ssht *
 use '/home/rkb/.config/broot/launcher/nushell/br' *
 
 
-def gpr_pweb [
+def gpr-pweb [
   branchToReview: string
   reviewNumber?: int
 ] {
