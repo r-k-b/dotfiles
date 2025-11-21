@@ -3,7 +3,7 @@
 # use like `source ssh-add-nushell.nu`
 do --env {
     let ssh_agent_file = (
-        $nu.temp-path | path join $"ssh-agent-($env.USER? | default whoami).nuon"
+        $env.HOME | path join $"ssh-agent-($env.USER? | default whoami).nuon"
     )
 
     if ($ssh_agent_file | path exists) {
