@@ -16,6 +16,11 @@ def main [
     try { git branch -D $targetBranch }
     git checkout $targetBranch
     git merge origin/main --no-edit
+
+    # see if we can standardize the `"peer": true` weirdness
+    nix develop . --command npm i --prefix admin
+    nix develop . --command npm i --prefix hippo
+
     ./hippo/bin/update-npmDepsHashes
     git commit -a -m "chore: bump npmDepsHashes"
     echo $"Pushing to branch ($targetBranch)..."
