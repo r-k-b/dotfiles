@@ -9,6 +9,7 @@
                 --protocol=gp
                 --user=hslrbe
                 --os=win -v
+                #--authgroup="HAMBS-HO-Gateway"
                 --authgroup="PHD-Gateway"
                 --servercert pin-sha256:b/doM2k5TZrX//Gi5fBiKKL2c9Toh5YsT3ZR85KWzuM=
                 --dump-http-traffic vpnportal.hambs.com.au
