@@ -1,4 +1,4 @@
 #!/usr/bin/env nu
 
-tmux new -d -s "BE_jbrider" nu -e 'nix develop git+ssh://git@ssh.dev.azure.com/v3/HAMBS-AU/Sydney/PHDSys-net?ref=main --command rider'
+tmux new -A -d -s "BE_jbrider" nu -e 'nix develop git+ssh://git@ssh.dev.azure.com/v3/HAMBS-AU/Sydney/PHDSys-net?ref=main --command rider'
 
