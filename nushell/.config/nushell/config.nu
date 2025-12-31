@@ -977,21 +977,48 @@ def gpr-pweb [
   branchToReview: string
   reviewNumber?: int
 ] {
-  if ((not ("INSIDE_HIPPO_DEV_ENV" in $env)) or ($env.INSIDE_HIPPO_DEV_ENV != "1")) {
-    cd ~/projects/pweb
-    print "npm is needed!"
-    return 1
-  }
   let wtFolder = "/home/rkb/projects/pweb_worktrees"
   let reviewBranch = match $reviewNumber {
     null => $branchToReview
     _ => $"rkb/review/($branchToReview)/($reviewNumber)"
   }
+  cd ~/projects/pweb
   git branch $reviewBranch $"origin/($branchToReview)"
   git branch --unset-upstream $reviewBranch
-  git worktree add $"($wtFolder)/($reviewBranch)" $reviewBranch
+  #git worktree add $"($wtFolder)/($reviewBranch)" $reviewBranch
+  git clone "/home/rkb/projects/pweb" -b $reviewBranch $"($wtFolder)/($reviewBranch)"
   cp -r "/home/rkb/projects/pweb/.idea" $"($wtFolder)/($reviewBranch)/"
-  npm --prefix $"($wtFolder)/($reviewBranch)/admin" install
+  direnv exec ~/projects/pweb npm --prefix $"($wtFolder)/($reviewBranch)/admin" install
   cd $"($wtFolder)/($reviewBranch)"
-  idea-ultimate $"($wtFolder)/($reviewBranch)"
+  git remote remove origin
+  git remote add origin git@github.com:Pacific-Health-Dynamics/PHDSys-webapp.git
+  echo "Opening intellij..."
+  print "Opening intellij ..."
+  idea $"($wtFolder)/($reviewBranch)"
+  echo "gpr-pweb done."
+}
+
+def gpr-pnet [
+  branchToReview: string
+  reviewNumber?: int
+] {
+  let wtFolder = "/home/rkb/projects/pnet_worktrees"
+  let reviewBranch = match $reviewNumber {
+    null => $branchToReview
+    _ => $"rkb/review/($branchToReview)/($reviewNumber)"
+  }
+  cd ~/projects/pnet
+  git branch $reviewBranch $"origin/($branchToReview)"
+  git branch --unset-upstream $reviewBranch
+  git clone "/home/rkb/projects/pnet" -b $reviewBranch $"($wtFolder)/($reviewBranch)"
+  cp -r "/home/rkb/projects/pnet/.idea" $"($wtFolder)/($reviewBranch)/"
+  cp "/home/rkb/projects/pnet/All.slnx" $"($wtFolder)/($reviewBranch)/"
+
+  cd $"($wtFolder)/($reviewBranch)"
+  git remote remove origin
+  git remote add origin git@ssh.dev.azure.com:v3/HAMBS-AU/Sydney/PHDSys-net
+  echo "Opening intellij..."
+  print "Opening intellij ..."
+  rider $"($wtFolder)/($reviewBranch)/All.slnx"
+  echo "gpr-net done."
 }
