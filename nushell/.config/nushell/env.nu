@@ -16,7 +16,7 @@ def create_left_prompt [] {
     # remind me when a long-running command finishes
     # (I probably switched away to look at something else)
     if (($env.CMD_DURATION_MS | into int) > 5_000 and (which espeak-ng | is-not-empty)) {
-        let said = $"that took ($env.CMD_DURATION_MS | into int | into duration --unit ms)"
+        let said = $"that took ($env.CMD_DURATION_MS | into int | into duration --unit ms), exit code ($env.LAST_EXIT_CODE)"
         sh -c $"espeak-ng '($said)' -s 300 -p 80 -a 50 &"
     }
 
