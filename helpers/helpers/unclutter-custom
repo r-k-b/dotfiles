@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 # "hide idle mouse"
 unclutter --timeout 1
-
+# xbanish -t 1 -m wnw # like unclutter, but also prevents unwanted hover states in apps
+#
