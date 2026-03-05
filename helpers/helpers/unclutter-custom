@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
+# "hide idle mouse"
 unclutter --timeout 1
 
