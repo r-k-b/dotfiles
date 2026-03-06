@@ -9,7 +9,7 @@ def main [
 ] {
     cd ~/projects/hdeps-fe
     git clean -xf .
-    git checkout .
+    git checkout -f .
     git reset --hard HEAD
     git fetch
     git checkout main
@@ -22,7 +22,9 @@ def main [
     nix develop . --command npm i --prefix hippo
 
     ./hippo/bin/update-npmDepsHashes
-    git commit -a -m "chore: bump npmDepsHashes"
+    try {
+        git commit -a -m "chore: bump npmDepsHashes"
+    }
     echo $"Pushing to branch ($targetBranch)..."
     git push
     echo "Pushed."
