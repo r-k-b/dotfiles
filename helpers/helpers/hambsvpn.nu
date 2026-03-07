@@ -13,7 +13,7 @@ if ($pw == "null") {
 }
 
 
-(print $pw
+($pw
     | (try {
         do --capture-errors {
             (sudo openconnect
