@@ -1,7 +1,19 @@
 #!/usr/bin/env nu
 
-(kwallet-query -r hambs kdewallet
-    | jq .pw -r
+let pw = (kwallet-query -r hambs kdewallet | jq .pw -r | str trim)
+
+if ($pw == "") {
+    print "⚠ Password is empty! Is kdewallet ok?"
+    exit 1
+}
+
+if ($pw == "null") {
+    print "⚠ Password is null! Is kdewallet ok?"
+    exit 1
+}
+
+
+(print $pw
     | (try {
         do --capture-errors {
             (sudo openconnect
