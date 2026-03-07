@@ -934,7 +934,7 @@ $env.config = {
     ]
 }
 
-source /home/rkb/.config/broot/launcher/nushell/br
+source /home/rkb/.config/broot/launcher/nushell/broot-init
 
 source ~/.zoxide.nu
 
@@ -970,7 +970,7 @@ module ssht {
 use ssht *
 
 
-use '/home/rkb/.config/broot/launcher/nushell/br' *
+use '/home/rkb/.config/broot/launcher/nushell/broot-init' *
 
 
 def gpr-pweb [
