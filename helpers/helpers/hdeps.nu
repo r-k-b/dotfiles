@@ -21,6 +21,9 @@ def main [
     nix develop . --command npm i --prefix admin
     nix develop . --command npm i --prefix hippo
 
+    # find problems early
+    nix flake check --log-format internal-json -v e+o>| nom --json
+
     ./hippo/bin/update-npmDepsHashes
     try {
         git commit -a -m "chore: bump npmDepsHashes"
