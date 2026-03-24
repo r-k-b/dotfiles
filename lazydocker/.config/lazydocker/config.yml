@@ -1,0 +1,9 @@
+customCommands:
+  images:
+    - name: dive
+      attach: true
+      command: 'dive {{ .Image.ID }}'
+  containers:
+    - name: dive
+      attach: true
+      command: 'dive {{ .Container.Container.Image }}'
