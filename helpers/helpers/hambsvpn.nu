@@ -22,9 +22,15 @@ if ($pw == "null") {
                 --user=hslrbe
                 --os=win -v
                 #--authgroup="HAMBS-HO-Gateway"
-                --authgroup="PHD-Gateway"
+                #--authgroup="PHD-Gateway"
                 --servercert pin-sha256:rrIwctsA+cNDdkg1VpwBsbSbx1SES7zcYt7NdIpSeMg=
-                --dump-http-traffic vpnportal.hambs.com.au
+                --dump-http-traffic
+                vpnportal.hambs.com.au
+                # vpnportal2.hambs.com.au
+                # vpngateway2.hambs.com.au # ?
+                # 103.101.133.7
+                # vpnportal5.hambs.com.au
+                # hasnetportal.hambs.com.au
                 -s 'vpn-slice --verbose --dump --banner --no-ns-hosts --no-host-names 10.0.0.0/8 172.0.0.0/8 192.168.0.0/16 203.22.229.119/32'
             )
         }
@@ -32,3 +38,5 @@ if ($pw == "null") {
         notify-send "vpn ded" --expire-time=0
     })
 )
+
+# <default-gateway>192.168.225.221</default-gateway> ?
