@@ -46,3 +46,4 @@
 	date = iso-strict
 [safe]
 	directory = /etc/nixos
+	directory = /home/rkb/mount-imacprojects/phdsys-net
