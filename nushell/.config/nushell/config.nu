@@ -1022,3 +1022,9 @@ def gpr-pnet [
   rider $"($wtFolder)/($reviewBranch)/All.slnx"
   echo "gpr-net done."
 }
+
+# ets, but defaulting to nice RFC3339 format
+def --wrapped etsr [...rest] {
+  ets -c -f '[%FT%T%z]' ...$rest
+}
+
