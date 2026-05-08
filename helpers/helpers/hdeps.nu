@@ -21,16 +21,28 @@ def main [
     nix develop . --command npm i --prefix admin
     nix develop . --command npm i --prefix hippo
 
-    # find problems early
-    nix flake check --log-format internal-json -v e+o>| nom --json
-
     ./hippo/bin/update-npmDepsHashes
+
     try {
-        git commit -a -m "chore: bump npmDepsHashes"
+        git commit -a -m "chore: bump npmDepsHashes [dependabot skip]"
     }
+
     echo $"Pushing to branch ($targetBranch)..."
     git push
     echo "Pushed."
     git checkout main
     git branch -d $targetBranch
+
+    echo "Starting a Hippo reviewapp about it..."
+    curl --request POST --header 'Accept: application/json' --header 'Content-Type: application/json' --data $"{
+      "user" : "rkb",
+      "bootstrap" : "hippo-frontend",
+      "gitShaOrTag" : "($targetBranch)",
+      "ticketLink" : "dependabot",
+      "ticketNo" : "dependabot",
+      "backend" : "yarp"
+    }" 'https://review-apps.dev.hippo.hambs.io/api/v1/apps'
+
+    # find problems early
+    nix flake check --max-jobs 2 --log-format internal-json -v e+o>| nom --json
 }
