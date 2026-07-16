@@ -8,8 +8,8 @@ let tmpdir = mktemp -d
   let workerPodName = kubectl -n review-apps get pods -o custom-columns=:.metadata.name --no-headers | grep worker
   print $"workerPodName is ($workerPodName)"
 
-  nix copy              --to $"file://($tmpdir)/toPreload" $"git+ssh://git@github.com/Pacific-Health-Dynamics/PHDSys-webapp.git?rev=($rev)#artifactZip"
-  nix copy --derivation --to $"file://($tmpdir)/toPreload" $"git+ssh://git@github.com/Pacific-Health-Dynamics/PHDSys-webapp.git?rev=($rev)#artifactZip"
+  nix copy              --from ssh-ng://rkb@strator --to $"file://($tmpdir)/toPreload" $"git+ssh://git@github.com/Pacific-Health-Dynamics/PHDSys-webapp.git?rev=($rev)#artifactZip"
+  nix copy --derivation --from ssh-ng://rkb@strator --to $"file://($tmpdir)/toPreload" $"git+ssh://git@github.com/Pacific-Health-Dynamics/PHDSys-webapp.git?rev=($rev)#artifactZip"
 
   print "uploading to the worker pod..."
   kubectl -n review-apps cp $"($tmpdir)/toPreload" $"($workerPodName):/opt/app/bootstrappers"
