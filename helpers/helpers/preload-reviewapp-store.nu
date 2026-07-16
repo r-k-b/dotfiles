@@ -15,8 +15,8 @@ let tmpdir = mktemp -d
   kubectl -n review-apps cp $"($tmpdir)/toPreload" $"($workerPodName):/opt/app/bootstrappers"
 
   print "copying to the store from the temp dir..."
-  kubectl exec -it $workerPodName -n review-apps -- rm -rf /opt/app/bootstrappers/toPreload/*
-  kubectl exec -it $workerPodName -n review-apps -- nix -v copy --all --from file:///opt/app/bootstrappers/toPreload --to file:///srv/review-apps/buildcache --no-check-sigs
+  kubectl exec -it $workerPodName -c review-apps-worker -n review-apps -- rm -rf /opt/app/bootstrappers/toPreload/*
+  kubectl exec -it $workerPodName -c review-apps-worker -n review-apps -- nix -v copy --all --from file:///opt/app/bootstrappers/toPreload --to file:///srv/review-apps/buildcache --no-check-sigs
 
   print "done."
 }
