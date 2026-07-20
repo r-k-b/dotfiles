@@ -17,7 +17,7 @@ def main [rev: string] {
   let clearDestTime = timeit { kubectl exec -it $workerPodName -c review-apps-worker -n review-apps -- rm -rf /opt/app/bootstrappers/toPreload/* }
 
   print "uploading to the worker pod..."
-  let uploadTime = kubectl -n review-apps cp $"($tmpdir)/toPreload" $"($workerPodName):/opt/app/bootstrappers"
+  let uploadTime = timeit { kubectl -n review-apps cp $"($tmpdir)/toPreload" $"($workerPodName):/opt/app/bootstrappers" }
 
   print "copying to the store from the temp dir..."
   let podCopyTime = timeit { kubectl exec -it $workerPodName -c review-apps-worker -n review-apps -- nix -v copy --all --from file:///opt/app/bootstrappers/toPreload --to file:///srv/review-apps/buildcache --no-check-sigs }
