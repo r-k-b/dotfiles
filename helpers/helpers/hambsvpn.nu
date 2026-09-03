@@ -31,7 +31,7 @@ if ($pw == "null") {
                 # 103.101.133.7
                 # vpnportal5.hambs.com.au
                 # hasnetportal.hambs.com.au
-                -s 'vpn-slice --verbose --dump --banner --no-ns-hosts --no-host-names 10.0.0.0/8 172.0.0.0/8 192.168.0.0/16 203.22.229.119/32'
+                -s 'vpn-slice --verbose --dump --banner --no-ns-hosts --no-host-names 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 203.22.229.119/32'
             )
         }
     } catch {
