@@ -8,7 +8,7 @@ def main [
     let currentBranch = (git branch --show-current)
     print $"Creating a review/comparison branch, at the MRCA of (ansi green)($targetBranch)(ansi reset) and (ansi green)($currentBranch)(ansi reset)..."
     git fetch --all --tags
-    let prBase = (git merge-base HEAD origin/main)
+    let prBase = (git merge-base HEAD $targetBranch)
     git branch rkb/pr-review-base $prBase --force
     print $"Branch (ansi green)rkb/pr-review-base(ansi reset) is ready for comparison, at commit ($prBase)"
 }
