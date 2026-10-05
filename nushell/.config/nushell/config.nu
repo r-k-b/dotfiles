@@ -994,7 +994,7 @@ def gpr-pweb [
   git remote add origin git@github.com:Pacific-Health-Dynamics/PHDSys-webapp.git
   echo "Opening intellij..."
   print "Opening intellij ..."
-  idea $"($wtFolder)/($reviewBranch)"
+  intellij-idea $"($wtFolder)/($reviewBranch)"
   echo "gpr-pweb done."
 }
 
