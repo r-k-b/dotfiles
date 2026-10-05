@@ -12,7 +12,14 @@ do --env {
             print $"loading existing env from file: ($ssh_agent_file)"
             load-env $ssh_agent_env
             print $ssh_agent_env
-            return
+            let agentWorks = try { ssh-add -l | ignore; true } catch { false }
+
+            if ($agentWorks) {
+                print "ssh-agent appears to be working 👍"
+                return
+            }
+            rm $ssh_agent_file
+            return (error make $"ssh-agent not working, even tho pid ($ssh_agent_env.SSH_AGENT_PID) exists...")
         } else {
             print $"no agent running; removing file: ($ssh_agent_file)"
             rm $ssh_agent_file
